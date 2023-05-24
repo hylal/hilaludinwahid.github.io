@@ -1,4 +1,6 @@
 <p align = "center">
+  <h1>Hilaludin Wahid's Page is using Gravity Theme
+  
 <img src="http://i.imgur.com/JhbQ03z.png"/>
 </p>
 
