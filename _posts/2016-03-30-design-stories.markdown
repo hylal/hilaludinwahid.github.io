@@ -10,7 +10,7 @@ Untuk membuat **plugin WordPress** untuk WooCommerce dengan rotasi tombol WhatsA
 Buat folder baru dengan nama plugin Anda di direktori wp-content/plugins.
 Buat file plugin baru dengan nama plugin-name.php di folder plugin Anda.
 Tambahkan header plugin Anda ke file plugin-name.php seperti ini:
->>
+{% highlight php %}
 <?php
 /*
 Plugin Name: Nama Plugin Anda
@@ -60,8 +60,8 @@ global $product;
 // Menambahkan action hook untuk menampilkan tombol WhatsApp
 add_action('woocommerce_after_add_to_cart_form', 'rotasi_whatsapp');
 
->>
+{% endhighlight %}
  
 
  
-### Catatan : Anda mungkin perlu menambahkan font awesome atau menggunakan icon font lainnya untuk menampilkan icon WhatsApp pada tombol. Kode di atas adalah contoh sederhana yang dapat digunakan sebagai dasar untuk pengembangan plugin Anda. Anda mungkin perlu memodifikasi kode ini sesuai dengan kebutuhan dan standar pengembangan plugin WordPress.
+### **Catatan **: Anda mungkin perlu menambahkan font awesome atau menggunakan icon font lainnya untuk menampilkan icon WhatsApp pada tombol. Kode di atas adalah contoh sederhana yang dapat digunakan sebagai dasar untuk pengembangan plugin Anda. Anda mungkin perlu memodifikasi kode ini sesuai dengan kebutuhan dan standar pengembangan plugin WordPress.
