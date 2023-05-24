@@ -23,7 +23,7 @@ Author URI: URL pengembang plugin Anda (opsional)
 */
 {% endhighlight %}
 
-4. Ini contoh kode untuk membuat whatsapp rotator di Woocommerce
+### Ini contoh kode untuk membuat whatsapp rotator di Woocommerce
 
 {% highlight php %}
 <?php
