@@ -7,12 +7,12 @@
 
 # Site settings
 title: Gravity
-email: hemangsk@gmail.com
-description: The Liberal Jekyll Theme
+email: hilaludinwahid@gmail.com
+description: Inspiring Digital Success Through Smart Marketing
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: hemang_kumar
-github_username:  hemangsk
+url: "http://hylal.github.io" # the base hostname & protocol for your site
+twitter_username: hilaludinwahid
+github_username:  hylal
 paginate: 5
 theme-dark: false #Set to true to change to dark website theme
 
