@@ -1,14 +1,67 @@
 ---
 layout: post
-title:  "Design Stories : Gravity"
-date:   2016-03-30 19:45:31 +0530
+title:  "Membuat Plugin WordPress Chat WhatsApp Rotasi CS Untuk Woocommerce"
+date:   2019-03-30 19:45:31 +0530
 categories: ["design", "science", "life"]
 author: "Hilaludin Wahid"
 ---
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Untuk membuat **plugin WordPress** untuk WooCommerce dengan rotasi tombol WhatsApp berdasarkan klik tombol dengan nomor WhatsApp terakhir, Anda dapat mengikuti langkah-langkah berikut:
 
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Buat folder baru dengan nama plugin Anda di direktori wp-content/plugins.
+Buat file plugin baru dengan nama plugin-name.php di folder plugin Anda.
+Tambahkan header plugin Anda ke file plugin-name.php seperti ini:
+>>
+<?php
+/*
+Plugin Name: Nama Plugin Anda
+Plugin URI: URL plugin Anda (opsional)
+Description: Deskripsi singkat plugin Anda
+Version: 1.0
+Author: Hilaludin Wahid
+Author URI: URL pengembang plugin Anda (opsional)
+*/
+4. Ini contoh kode untuk membuat whatsapp rotator di Woocommerce
 
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<?php
+/*
+Plugin Name: Simple WhatsApp Button for WooCommerce
+Author: Hilaludin Wahid
+Description: Menambahkan tombol WhatsApp pada halaman produk WooCommerce
+Version: 1.0
+*/
+function rotasi_whatsapp($product_name) {
+global $product;
+  $product_name = get_the_title();
+  $numbers = array("6287878018061", "6289605794053", "6281381261153");
+  $last_number_clicked = get_option('last_number_clicked');
+  if (!$last_number_clicked) {
+    $last_number_clicked = 0;
+  }
+  $last_number_clicked++;
+  if ($last_number_clicked >= count($numbers)) {
+    $last_number_clicked = 0;
+  }
+  update_option('last_number_clicked', $last_number_clicked);
+  $current_number = $numbers[$last_number_clicked];
+  $url = "https://api.whatsapp.com/send?phone=".$current_number."&text=".urlencode("Hai, saya ingin membeli produk: " . $product_name);
+   echo '<button id="rotasi-wa-button-click" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+    <i class="fa fa-whatsapp" style="margin-right: 10px;"></i> Chat via WhatsApp
+  </button>';
+  
+  echo '<script>
+    document.getElementById("rotasi-wa-button-click").addEventListener("click", function() {
+      window.location.href = "https://wa.me/' . $current_number . '";
+    });
+  </script>';
+}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+// Menambahkan action hook untuk menampilkan tombol WhatsApp
+add_action('woocommerce_after_add_to_cart_form', 'rotasi_whatsapp');
+
+>>
+ 
+
+ 
+### Catatan : Anda mungkin perlu menambahkan font awesome atau menggunakan icon font lainnya untuk menampilkan icon WhatsApp pada tombol. Kode di atas adalah contoh sederhana yang dapat digunakan sebagai dasar untuk pengembangan plugin Anda. Anda mungkin perlu memodifikasi kode ini sesuai dengan kebutuhan dan standar pengembangan plugin WordPress.
