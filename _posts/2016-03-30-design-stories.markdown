@@ -21,8 +21,8 @@ Version: 1.0
 Author: Hilaludin Wahid
 Author URI: URL pengembang plugin Anda (opsional)
 */
-
 {% endhighlight %}
+
 4. Ini contoh kode untuk membuat whatsapp rotator di Woocommerce
 
 {% highlight php %}
