@@ -20,7 +20,7 @@ body:before {
     right: 0;
     width: 100%;
     height: 550px;
-    background-image: /undraw/shape-bg.png;
+    background-image: url("undraw/shape-bg.png");
     background-size: cover;
     z-index: -1;
 }
